@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Notizblock</title>
+
+    <link rel="stylesheet" href="style/style-index.css" />
+
+    <script src="script/script.js"></script>
+  </head>
+  <body onload="render(), renderTrash()">
+    <section class="layout">
+      <section class="sideBar">
+        <button onclick="showNotice()" class="sideBar-btn">Notizen</button>
+        <button onclick="showTrash()" class="sideBar-btn">Papierkorb</button>
+      </section>
+
+      <section id="main" class="main__content">
+        <form onsubmit="return false">
+          <div>
+            <input id="title-value" type="text" placeholder="Titel der Notiz" />
+            <div class="error-title-value" id="error__title-value"></div>
+          </div>
+          <div>
+            <textarea id="notice-value" cols="30" rows="10" placeholder="Notiz schreiben..."></textarea>
+            <div class="error-notice-value" id="error__notice-value"></div>
+          </div>
+          <button class="btn-addNotice" onclick="addNewNotice()">+Hinzufügen</button>
+        </form>
+
+        <div id="notes-content"></div>
+      </section>
+
+      <section id="trash" class="trash__content">
+        <div class="trash"></div>
+      </section>
+
+      <section id="editNote" class="editNote__content"></section>
+    </section>
+  </body>
+</html>
